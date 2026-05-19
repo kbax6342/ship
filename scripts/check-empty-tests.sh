@@ -32,26 +32,104 @@ for f in "$E2E_DIR"/*.spec.ts; do
     continue
   fi
 
-  # Use awk for stateful parsing of test bodies
-  empty_count=$(awk '
-    /^[[:space:]]*test\(/ && !/test\.fixme/ && !/test\.skip/ && !/test\.todo/ {
-      in_test = 1
-      has_content = 0
+  # Parse test bodies with brace matching so nested callbacks/fetch options do not
+  # make real tests look empty. Only TODO/comment-only bodies are considered empty.
+  empty_count=$(node - "$f" <<'NODE'
+const fs = require('fs');
+
+const file = process.argv[2];
+const source = fs.readFileSync(file, 'utf8');
+
+function findMatchingBrace(text, openIndex) {
+  let depth = 0;
+  let quote = null;
+  let inLineComment = false;
+  let inBlockComment = false;
+
+  for (let i = openIndex; i < text.length; i++) {
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (inLineComment) {
+      if (char === '\n') inLineComment = false;
+      continue;
     }
-    in_test && /expect\(/ {
-      has_content = 1
-    }
-    in_test && /page\./ {
-      has_content = 1
-    }
-    in_test && /^\s*}\);/ {
-      if (!has_content) {
-        empty_count++
+
+    if (inBlockComment) {
+      if (char === '*' && next === '/') {
+        inBlockComment = false;
+        i++;
       }
-      in_test = 0
+      continue;
     }
-    END { print empty_count + 0 }
-  ' "$f")
+
+    if (quote) {
+      if (char === '\\') {
+        i++;
+      } else if (char === quote) {
+        quote = null;
+      }
+      continue;
+    }
+
+    if (char === '/' && next === '/') {
+      inLineComment = true;
+      i++;
+      continue;
+    }
+
+    if (char === '/' && next === '*') {
+      inBlockComment = true;
+      i++;
+      continue;
+    }
+
+    if (char === '"' || char === "'" || char === '`') {
+      quote = char;
+      continue;
+    }
+
+    if (char === '{') depth++;
+    if (char === '}') {
+      depth--;
+      if (depth === 0) return i;
+    }
+  }
+
+  return -1;
+}
+
+function stripComments(text) {
+  return text
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/\/\/.*$/gm, '');
+}
+
+let emptyCount = 0;
+const testCall = /\btest\s*\(/g;
+let match;
+
+while ((match = testCall.exec(source)) !== null) {
+  const arrowIndex = source.indexOf('=>', match.index);
+  if (arrowIndex === -1) continue;
+
+  const bodyStart = source.indexOf('{', arrowIndex);
+  if (bodyStart === -1) continue;
+
+  const bodyEnd = findMatchingBrace(source, bodyStart);
+  if (bodyEnd === -1) continue;
+
+  const body = source.slice(bodyStart + 1, bodyEnd);
+  const codeWithoutComments = stripComments(body).trim();
+
+  if (/TODO/i.test(body) && codeWithoutComments === '') {
+    emptyCount++;
+  }
+}
+
+console.log(emptyCount);
+NODE
+  )
 
   if [ "$empty_count" -gt 0 ]; then
     found_empty=1

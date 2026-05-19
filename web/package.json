@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && VITE_API_URL= vite build",
+    "build": "tsc && cross-env VITE_API_URL= vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:ts-safety": "eslint . --report-unused-disable-directives",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
