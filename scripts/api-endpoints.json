@@ -1,0 +1,27 @@
+[
+  {
+    "name": "My Week",
+    "method": "GET",
+    "path": "/api/my-week"
+  },
+  {
+    "name": "Issues list",
+    "method": "GET",
+    "path": "/api/issues"
+  },
+  {
+    "name": "Projects list",
+    "method": "GET",
+    "path": "/api/projects"
+  },
+  {
+    "name": "Wiki documents list",
+    "method": "GET",
+    "path": "/api/documents?type=wiki"
+  },
+  {
+    "name": "Action items",
+    "method": "GET",
+    "path": "/api/action-items"
+  }
+]
