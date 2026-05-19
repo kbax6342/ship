@@ -168,7 +168,7 @@ ${rows
   .join("\n")}
 
 ## Notes
-
+.............................................................................
 This benchmark should be run against a seeded database with realistic volume:
 - 500+ documents
 - 100+ issues
