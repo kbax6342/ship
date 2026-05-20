@@ -10,6 +10,8 @@
     "build": "tsc && cp src/db/schema.sql dist/db/schema.sql && cp -r src/db/migrations dist/db/migrations",
     "start": "node dist/index.js",
     "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:ts-safety": "eslint . --report-unused-disable-directives",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",

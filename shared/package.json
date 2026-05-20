@@ -16,6 +16,8 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:ts-safety": "eslint . --report-unused-disable-directives",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
