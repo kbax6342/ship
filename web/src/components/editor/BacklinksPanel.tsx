@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ContextMenu, ContextMenuItem } from '@/components/ui/ContextMenu';
 import { useToast } from '@/components/ui/Toast';
@@ -19,60 +19,76 @@ interface BacklinksPanelProps {
 
 export function BacklinksPanel({ documentId }: BacklinksPanelProps) {
   const [backlinks, setBacklinks] = useState<Backlink[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [hasLoadedBacklinks, setHasLoadedBacklinks] = useState(false);
+  const hasLoadedBacklinksRef = useRef(false);
+  const [isLoadingBacklinks, setIsLoadingBacklinks] = useState(false)
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number; backlink: Backlink } | null>(null);
   const navigate = useNavigate();
   const { showToast } = useToast();
 
-  useEffect(() => {
-    if (!documentId) return;
+  
+useEffect(() => {
+  if (!documentId) return;
 
-    let cancelled = false;
+  let cancelled = false;
 
-    async function fetchBacklinks() {
-      try {
-        // Only show loading on initial fetch, not on polls
-        if (backlinks.length === 0) {
-          setLoading(true);
-        }
+  // Reset only when switching to a different document.
+  setBacklinks([]);
+  setError(null);
+  setIsInitialLoading(true);
+  setIsRefreshing(false);
+  setHasLoadedBacklinks(false);
+  hasLoadedBacklinksRef.current = false;
+
+  async function fetchBacklinks() {
+    try {
+      if (hasLoadedBacklinksRef.current) {
+        setIsRefreshing(true);
+      } else {
+        setIsInitialLoading(true);
+      }
+
+      const response = await fetch(`${API_URL}/api/documents/${documentId}/backlinks`, {
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch backlinks');
+      }
+
+      const data = await response.json();
+
+      if (!cancelled) {
+        setBacklinks(Array.isArray(data) ? data : []);
         setError(null);
-
-        const response = await fetch(`${API_URL}/api/documents/${documentId}/backlinks`, {
-          credentials: 'include',
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch backlinks');
-        }
-
-        const data = await response.json();
-
-        if (!cancelled) {
-          setBacklinks(data);
-        }
-      } catch (err) {
-        if (!cancelled) {
-          console.error('Error fetching backlinks:', err);
-          setError('Failed to load backlinks');
-        }
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
+        setHasLoadedBacklinks(true);
+        hasLoadedBacklinksRef.current = true;
+      }
+    } catch (err) {
+      if (!cancelled) {
+        console.error('Error fetching backlinks:', err);
+        setError('Failed to load backlinks');
+      }
+    } finally {
+      if (!cancelled) {
+        setIsInitialLoading(false);
+        setIsRefreshing(false);
       }
     }
+  }
 
-    fetchBacklinks();
+  fetchBacklinks();
 
-    // Poll for updates every 5 seconds (for real-time backlink updates)
-    const intervalId = setInterval(fetchBacklinks, 5000);
+  const intervalId = window.setInterval(fetchBacklinks, 5000);
 
-    return () => {
-      cancelled = true;
-      clearInterval(intervalId);
-    };
-  }, [documentId]);
+  return () => {
+    cancelled = true;
+    window.clearInterval(intervalId);
+  };
+}, [documentId]);
 
   const getDocumentUrl = (backlink: Backlink): string => {
     // Get the path based on document type
@@ -154,7 +170,7 @@ export function BacklinksPanel({ documentId }: BacklinksPanelProps) {
     return labels[type] || type;
   };
 
-  if (loading) {
+  if (isInitialLoading && !hasLoadedBacklinks) {
     return (
       <div className="space-y-2 p-4">
         <h3 className="text-xs font-medium text-muted">Backlinks</h3>
@@ -176,9 +192,9 @@ export function BacklinksPanel({ documentId }: BacklinksPanelProps) {
     <div className="space-y-2 p-4">
       <h3 className="text-xs font-medium text-muted">Backlinks</h3>
 
-      {backlinks.length === 0 ? (
-        <div className="text-xs text-muted">No backlinks</div>
-      ) : (
+   {hasLoadedBacklinks && backlinks.length === 0 ? (
+  <div className="text-xs text-muted">No backlinks</div>
+) : (
         <div className="space-y-1">
           {backlinks.map((backlink) => (
             <div

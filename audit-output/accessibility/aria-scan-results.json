@@ -1,0 +1,499 @@
+[
+  {
+    "file": "web\\src\\components\\ActionItemsModal.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\ApprovalButton.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\ConfirmDialog.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\dialogs\\BacklogPickerModal.tsx",
+    "line": 298,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={isSelected} disabled={isInContext} onChange={() =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\dialogs\\ConversionDialog.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\dialogs\\MergeProgramDialog.tsx",
+    "line": 155,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={targetId || ''} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\dialogs\\MergeProgramDialog.tsx",
+    "line": 214,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={confirmText} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\dialogs\\MergeProgramDialog.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\document-tabs\\ProgramProjectsTab.tsx",
+    "line": 74,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={handleCreateProject} disabled={createProjectMutation.isPending} className=\"inline-flex items-center gap-1.5 rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90 transition-c",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\document-tabs\\ProgramProjectsTab.tsx",
+    "line": 99,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={handleCreateProject} disabled={createProjectMutation.isPending} className=\"inline-flex items-center gap-1.5 rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90 transition-c",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\DocumentListToolbar.tsx",
+    "line": 161,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={visibleColumns.has(col.key)} onChange={() =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\editor\\DocumentEmbed.tsx",
+    "line": 16,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button type=\"button\" onClick={handleClick} className=\"flex w-full items-center gap-2 rounded-md border border-border bg-background/50 px-3 py-2 text-left text-sm transition-colors hover:bg-border/30 cursor-pointer my-1\"",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\Editor.tsx",
+    "line": 927,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea ref={titleInputRef} value={title} onChange={titleReadOnly ? undefined : handleTitleChange} onKeyDown={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\IssuesList.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\KanbanBoard.tsx",
+    "line": 344,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={isSelected ?? false} onChange={() =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\ProjectRetro.tsx",
+    "line": 269,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={monetaryImpactActual} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\ProjectRetro.tsx",
+    "line": 304,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={newCriterion} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\ProjectSetupWizard.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\review\\WeeklyReviewSubNav.tsx",
+    "line": 167,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea value={commentInput} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\review\\WeeklyReviewSubNav.tsx",
+    "line": 185,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"radio\" checked={decision === 'approve'} onChange={() =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\review\\WeeklyReviewSubNav.tsx",
+    "line": 200,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"radio\" checked={decision === 'request_changes'} onChange={() =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\review\\WeeklyReviewSubNav.tsx",
+    "line": 214,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea value={feedbackInput} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\review\\WeeklyReviewSubNav.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\SessionTimeoutModal.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\DocumentTypeSelector.tsx",
+    "line": 31,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={value} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\IssueSidebar.tsx",
+    "line": 313,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea value={rejectReason} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\IssueSidebar.tsx",
+    "line": 341,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={issue.state} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\IssueSidebar.tsx",
+    "line": 358,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={issue.priority} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\IssueSidebar.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\ProgramSidebar.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\ProjectSidebar.tsx",
+    "line": 233,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={project.has_design_review || false} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\QualityAssistant.tsx",
+    "line": 145,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={toggle} className=\"w-full flex items-center justify-between px-3 py-2 text-xs font-medium text-muted hover:text-foreground\"> {title} <svg className={cn('w-3 h-3 transition-transform', expanded && 'rotate",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\sidebars\\WeekSidebar.tsx",
+    "line": 172,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={sprint.status} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\StandupFeed.tsx",
+    "line": 221,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={handleSubmit} disabled={!createEditor || createEditor.isEmpty || saving} className=\"rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors disabled:opacity-5",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\ui\\ContextMenu.tsx",
+    "line": 262,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button ref={buttonRef} role=\"menuitem\" aria-haspopup=\"true\" aria-expanded={isOpen} tabIndex={isActive ? 0 : -1} className={cn( 'w-full px-3 py-2 text-left text-sm', 'flex items-center justify-between gap-2', 'hover:bg-b",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\ui\\MultiAssociationChips.tsx",
+    "line": 172,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input ref={inputRef} type=\"text\" value={search} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\components\\UploadNavigationWarning.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\components\\VisibilityDropdown.tsx",
+    "line": 52,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button key={option.value} type=\"button\" onClick={() => { onChange(option.value); setOpen(false); }} className={cn( 'flex w-full cursor-pointer items-center gap-2 rounded px-2 py-1.5 text-sm', 'hover:bg-border/50 transit",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\components\\week\\WeekDetailView.tsx",
+    "line": 135,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={onBack} className=\"text-muted hover:text-foreground transition-colors\" > <svg className=\"h-5 w-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"> <path strokeLinecap=\"round\" strokeLinejoin=\"round\"",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\pages\\AdminDashboard.tsx",
+    "line": 237,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={showArchived} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminDashboard.tsx",
+    "line": 260,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={newWorkspaceName} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 362,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={() => { setSelectedUser(null); setUserSearch(''); }} className=\"ml-auto text-muted hover:text-foreground\" > <svg className=\"h-4 w-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"> <path strokeLin",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 265,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={member.role} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 376,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={userSearch} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 415,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={addUserRole} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 441,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"email\" value={inviteEmail} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 452,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={inviteRole} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\AdminWorkspaceDetail.tsx",
+    "line": 480,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={inviteSubjectDn} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\App.tsx",
+    "line": 1507,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input ref={inputRef} type=\"text\" value={editingName} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\App.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\pages\\Documents.tsx",
+    "line": 200,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={search} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\Login.tsx",
+    "line": 311,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button type=\"button\" onClick={handleCaiaLogin} disabled={isCaiaLoading || !isOnline} className={cn( 'w-full rounded-md border border-border bg-background px-4 py-2.5', 'text-sm font-medium text-foreground', 'transition-",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\pages\\OrgChartPage.tsx",
+    "line": 575,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={() => { setToast(null); if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current); }} className=\"text-muted hover:text-foreground\" > <svg className=\"h-4 w-4\" fill=\"none\" stroke=\"currentColor\" vi",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\pages\\OrgChartPage.tsx",
+    "line": 517,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={searchQuery} onChange={e =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\Projects.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\pages\\ReviewsPage.tsx",
+    "line": 1195,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea value={feedbackText} onChange={e =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\ReviewsPage.tsx",
+    "line": 1259,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea value={approvalComment} onChange={e =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\ReviewsPage.tsx",
+    "line": 1303,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<textarea value={approvalComment} onChange={e =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\StatusOverviewPage.tsx",
+    "line": 14,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={showArchived} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\TeamDirectory.tsx",
+    "line": 111,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={showArchived} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\TeamMode.tsx",
+    "line": 576,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={nameFilter} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\TeamMode.tsx",
+    "line": 625,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={showArchived} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\TeamMode.tsx",
+    "line": 1,
+    "type": "Possible dialog/modal missing accessible role or label",
+    "snippet": "File contains modal/dialog patterns",
+    "recommendation": "Ensure modal has role=\"dialog\", aria-modal=\"true\", and aria-labelledby or aria-label."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 638,
+    "type": "Possible icon-only button missing accessible label",
+    "snippet": "<button onClick={handleCopy} className={cn( \"px-3 py-2 rounded-md text-sm transition-colors\", copied ? \"bg-green-500/20 text-green-500\" : \"bg-border/50 text-foreground hover:bg-border\" )} > {copied ? 'Copied!' : 'Copy'} ",
+    "recommendation": "Add aria-label, for example: aria-label=\"Delete document\""
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 285,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"checkbox\" checked={showArchived} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 324,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={member.role || 'member'} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 412,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"email\" value={inviteEmail} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 420,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={inviteRole} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 448,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={inviteSubjectDn} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 590,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<input type=\"text\" value={tokenName} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  },
+  {
+    "file": "web\\src\\pages\\WorkspaceSettings.tsx",
+    "line": 601,
+    "type": "Possible form control missing accessible label",
+    "snippet": "<select value={expiresInDays} onChange={(e) =>",
+    "recommendation": "Add a visible <label>, aria-label, or aria-labelledby."
+  }
+]
